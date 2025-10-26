@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <title>Dialetra</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2580683477309905"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <canvas id="spaceCanvas"></canvas>
+
+        <p id="titulo">DIALETRA</p><p id="titulo">DIALETRA</p>
+        <div class="containerbotoes">
+            <button class="botoes" id="comojogar">?</button>
+            <button class="botoes" id="sobre">ⓘ</button>
+            <button class="botoes" id="estatisticas">📊</button>
+        </div>
+
+        <div class="containermodo">
+            <select id="modoJogo">
+                <option value="facil">Fácil (6 tentativas)</option>
+                <option value="medio">Médio (5 tentativas)</option>
+                <option value="dificil">Difícil (4 tentativas)</option>
+            </select>
+        </div>
+    
+
+    <div class="containerpalavras">
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+        <div class="linha">
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+            <div class="celula"></div>
+        </div>
+    </div>
+
+    <!-- Teclado virtual -->
+    <div id="keyboard" class="keyboard">
+        <div class="keyboard-row">
+            <button class="key" data-letter="Q">Q</button><button class="key" data-letter="W">W</button><button
+                class="key" data-letter="E">E</button><button class="key" data-letter="R">R</button><button class="key"
+                data-letter="T">T</button><button class="key" data-letter="Y">Y</button><button class="key"
+                data-letter="U">U</button><button class="key" data-letter="I">I</button><button class="key"
+                data-letter="O">O</button><button class="key" data-letter="P">P</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key" data-letter="A">A</button><button class="key" data-letter="S">S</button><button
+                class="key" data-letter="D">D</button><button class="key" data-letter="F">F</button><button class="key"
+                data-letter="G">G</button><button class="key" data-letter="H">H</button><button class="key"
+                data-letter="J">J</button><button class="key" data-letter="K">K</button><button class="key"
+                data-letter="L">L</button>
+        </div>
+        <div class="keyboard-row">
+            <button class="key action" data-key="enter"> ↵</button>
+            <button class="key" data-letter="Z">Z</button><button class="key" data-letter="X">X</button><button
+                class="key" data-letter="C">C</button><button class="key" data-letter="V">V</button><button class="key"
+                data-letter="B">B</button><button class="key" data-letter="N">N</button><button class="key"
+                data-letter="M">M</button>
+            <button class="key action" data-key="backspace">⌫</button>
+        </div>
+    </div>
+
+    <!-- Modal de fim de jogo -->
+    <div id="fimJogoModal" style="display: none;">
+        <div id="fimJogoContent">
+            <p id="mensagemFim"></p>
+            <button id="btnReiniciar">Jogar Novamente</button>
+            <button id="btnFechar">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal Como Jogar-->
+    <div id="comojogarModal" style="display: none">
+        <div id="comojogarContent">
+            <p>Como jogar?<br><br>
+                Você tem 6 tentativas para conseguir descobrir a palavra secreta, podendo acertar a letra no lugar
+                certo, acertar a letra no lugar errado, ou errar a letra</p>
+            <br>
+            <p>Verde:</p><img src="img/Captura de tela 2025-09-16 210414.png">
+            <p>Letra certa na posição certa</p><br>
+            <p>Amarelo:</p><img src="img/Captura de tela 2025-09-16 210147.png">
+            <p>Letra certa na posição errada</p><br>
+            <p>Vermelho:</p><img src="img/Captura de tela 2025-09-16 210515.png">
+            <p>Letra errada (Não existe na palavra)</p><br>
+            <p>As palavras podem repetição de letras.
+                Exemplo: Amada
+            </p>
+        </div>
+    </div>
+    <div id="sobreModal" style="display: none">
+        <div id="sobreContent">
+            <button id="fechar">X</button>SOBRE O JOGO<br><BR>
+            O Dialetra foi criado por mim, <a href="https://www.linkedin.com/in/henryco-meneghetti-1659b035b/">Henryco
+                Meneghetti.</a><br> <br>
+            Dialetra foi inspirado no <a href="https://term.ooo/">Termo</a> e no <a
+                href="https://www.nytimes.com/games/wordle/index.html">Wordle</a>.
+        </div>
+    </div>
+
+    <!-- Modal Estatísticas -->
+    <div id="estatisticasModal" style="display:none">
+        <div id="estatisticasContent">
+            <h2>📊 Estatísticas</h2>
+            <p>Partidas jogadas: <span id="estat-partidas">0</span></p>
+            <p>Vitórias: <span id="estat-vitorias">0</span></p>
+            <p>Derrotas: <span id="estat-derrotas">0</span></p>
+            <p>Sequência atual: <span id="estat-streak">0</span></p>
+            <p>Melhor sequência: <span id="estat-best">0</span></p>
+            <button id="fecharEstatisticas">Fechar</button>
+        </div>
+    </div>
+
+    <script src="script/palavras.js"></script>
+    <script src="script/script.js"></script>
+    <script src="script/galaxia.js"></script>
+
+</body>
+
+</html>
