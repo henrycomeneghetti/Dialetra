@@ -20,7 +20,7 @@ body {
 
 #titulo {
     position: fixed;
-    font-size: 200%;
+    font-size: clamp(120%, 4vw, 200%);
     background: linear-gradient(90deg, #5f5f5f, white);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
