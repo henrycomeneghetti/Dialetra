@@ -117,7 +117,7 @@ body {
 
 .keyboard {
     position: absolute;
-    bottom: 4%;
+    bottom: 1%;
     width: 330px;
     display: flex;
     flex-direction: column;
@@ -193,6 +193,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 9999;
+
 }
 
 #fimJogoContent,
