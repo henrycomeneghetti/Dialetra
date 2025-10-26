@@ -97,18 +97,19 @@ body {
 }
 
 .celula {
-    width: 55px;
-    aspect-ratio: 1 / 1;
-    background-color: #5f5f5f;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 10px;
-    font-family: 'Orbitron', sans-serif;
-    color: white;
+   width: clamp(40px, 6vw, 55px);
+aspect-ratio: 1 / 1;
+background-color: #5f5f5f;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: clamp(18px, 3vw, 28px);
+font-weight: bold;
+text-transform: uppercase;
+border-radius: 10px;
+font-family: 'Orbitron', sans-serif;
+color: white;
+
 }
 
 .celula.ativa {
